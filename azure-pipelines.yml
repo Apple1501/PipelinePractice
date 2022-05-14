@@ -26,8 +26,8 @@ steps: # здесь указываются шаги конвейера
     pip install -r requirements.txt
   displayName: 'Install dependencies' # здесь отображается название текущей задачи
 
-- script: | # запускаем юнит тесты
-    pip install pytest
+- script: | # запускаем юнит тесты (без функциональных)
+    pip install pytest 
     pytest tests/unit_tests && pip install pycmd && py.cleanup tests/
   displayName: 'pytest'
 
